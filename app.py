@@ -24,8 +24,8 @@ client = AsyncConvaAI(
 
 # Asynchronous function to get response from Conva AI
 async def get_conva_response(query: str):
-    response = await client.invoke(query=query)
-    return response['output']
+    response = await client.invoke_capability(query=query)
+    return response
 
 # Route to handle POST requests from the frontend
 @app.post("/api/chat")
